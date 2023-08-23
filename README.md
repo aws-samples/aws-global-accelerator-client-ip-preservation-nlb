@@ -1,11 +1,32 @@
-## My Project
+## Configuring client IP address preservation with a Network Load Balancer in AWS Global Accelerator
 
-TODO: Fill this README out!
+This repo includes the CloudFormation template that deploys the architecture mentioned in Figure-1 below.
 
-Be sure to:
+## PreRequisites
+- You must have AWS CLI configured on the machine
+- You must have the right IAM permissions to deploy this CloudFormation template
 
-* Change the title in this README
-* Edit your repository description on GitHub
+## Deployment steps
+
+Use `aws configure` to ensure you have the correct credentials on your machine. After that, clone the repo and navigate to the directory:
+```
+https://github.com/aws-samples/aws-global-accelerator-client-ip-preservation-nlb
+cd aws-global-accelerator-client-ip-preservation-nlb
+```
+
+Deploy the stack:
+```
+aws cloudformation create-stack --stack-name aga-sipp-nlb-demo \
+   --template-body file://aga_sipp_nlb_cfn_latest.yaml \
+   --parameters ParameterKey=AllowedIP,ParameterValue=0.0.0.0/0 \
+   --capabilities CAPABILITY_NAMED_IAM \
+   --region us-west-2
+```
+
+## Cleanup
+```
+aws cloudformation delete-stack --stack-name aga-sipp-nlb-demo  --region us-west-2
+```
 
 ## Security
 
