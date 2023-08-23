@@ -1,6 +1,8 @@
 ## Configuring client IP address preservation with a Network Load Balancer in AWS Global Accelerator
 
-This repo includes the CloudFormation template that deploys the architecture mentioned in Figure-1 below.
+This repo includes the CloudFormation template that deploys the architecture mentioned in Figure-1 below. Check out the [Configuring client IP address preservation with a Network Load Balancer in AWS Global Accelerator](https://aws.amazon.com/blogs/networking-and-content-delivery/configuring-client-ip-address-preservation-with-a-network-load-balancer-in-aws-global-accelerator/) blog post for details on the solution.
+
+![Figure-1 Sample Architecture](architecture.png)
 
 ## PreRequisites
 - You must have AWS CLI configured on the machine
